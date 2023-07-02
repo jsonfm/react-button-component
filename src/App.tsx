@@ -6,10 +6,26 @@ function App() {
     <Layout>
       <div className="min-h-[90vh]">
         <h4 className="text-2xl mb-8">Buttons</h4>
-        <div className="flex flex-wrap">
-          <div className="flex flex-col gap-2">
-            <p>{`<Button/>`}</p>
-            <Button>Default</Button>
+        <div className="flex flex-wrap gap-6">
+          <div className="flex gap-4">
+            <div className="flex flex-col gap-2 w-72">
+              <p>{`<Button/>`}</p>
+              <Button>Default</Button>
+            </div>
+            <div className="flex flex-col gap-2 w-72">
+              <p>{`&:hover, &:focus`}</p>
+              <Button>Default</Button>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="flex flex-col gap-2 w-72">
+              <p>{`<Button/>`}</p>
+              <Button variant="primary">Default</Button>
+            </div>
+            <div className="flex flex-col gap-2 w-72">
+              <p>{`&:hover, &:focus`}</p>
+              <Button>Default</Button>
+            </div>
           </div>
         </div>
       </div>

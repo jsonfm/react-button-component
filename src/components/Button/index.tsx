@@ -31,7 +31,7 @@ export const Button = ({ variant = "primary", size = "md", outline = false,  chi
     const outlineClassName = outline ? "!bg-transparent" : "";
 
 
-    const baseClassName = `px-4 ${sizeClassName} ${variantClassName} ${outlineClassName} cursor-pointer rounded-md flex justify-center transition-200`
+    const baseClassName = `px-4 ${sizeClassName} ${variantClassName} ${outlineClassName} cursor-pointer rounded-md inline-flex justify-center transition-200`
     return (
         <div className={baseClassName}>
             {children}
