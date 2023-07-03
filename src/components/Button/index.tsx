@@ -5,11 +5,12 @@ interface ButtonProps {
     size?: "sm" | "md" | "lg";
     children?: ReactNode;
     outline?: boolean;
+    disabledShadow?: boolean;
 }
 
-export const Button = ({ variant = "primary", size = "md", outline = false,  children }: ButtonProps) => {
+export const Button = ({ variant = "primary", size = "md", outline = false, disabledShadow = false,  children }: ButtonProps) => {
     let variantClassName = `bg-primary !text-white`;
-
+    const shadowClassName = disabledShadow ? `!drop-shadow-none` : `drop-shadow-md`;
     if(variant === "primary"){
         variantClassName = `bg-neutral`;
     }
@@ -20,20 +21,24 @@ export const Button = ({ variant = "primary", size = "md", outline = false,  chi
 
     let sizeClassName = `py-2`;
 
-    if(sizeClassName === "md") {
-        sizeClassName = `py-4`;
+    if(size === "sm") {
+        sizeClassName = `py-1`;
     }
 
-    if(sizeClassName === "md") {
-        sizeClassName = `py-6`;
+    if(size === "md") {
+        sizeClassName = `py-2`;
+    }
+
+    if(size === "lg"){
+        sizeClassName = `py-4`
     }
 
     const outlineClassName = outline ? "!bg-transparent" : "";
 
-
-    const baseClassName = `px-4 ${sizeClassName} ${variantClassName} ${outlineClassName} cursor-pointer rounded-md inline-flex justify-center transition-200`
+    const baseClassName = `btn`;
+    const buttonClassName = `${sizeClassName} ${variantClassName} ${outlineClassName} ${shadowClassName} ${baseClassName}`;
     return (
-        <div className={baseClassName}>
+        <div className={buttonClassName}>
             {children}
         </div>
     )

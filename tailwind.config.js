@@ -12,7 +12,9 @@ export default {
       "danger": "#D3302F",
       "warning": "#F7552F",
       "neutral": "#E0E0E0",
-      "white": "#FFF"
+      "neutral-dark": "#AEAEAE",
+      "white": "#FFF",
+      "black": "#000",
     }
   },
   plugins: [],
