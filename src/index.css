@@ -10,15 +10,35 @@
 
 @layer components {
     .btn {
-        @apply px-4 cursor-pointer transition-[.2s] hover:scale-[1.02];
+        @apply px-4 cursor-pointer transition-[.2s] hover:scale-[1.02] inline-flex justify-center rounded-md w-[100px];
     }
 
-    .btn:hover {
+    .btn:hover, .btn-hover {
         @apply bg-neutral-dark;
     }
 
-    &-primary {
-        @apply bg-primary;
-    }  
+    .btn-outline {
+        @apply !bg-opacity-0 border-2 border-primary text-primary font-[500];
+    }
+
+    .btn-outline:hover, .btn-outline-hover {
+        @apply !bg-primary !bg-opacity-10;
+    }
+
+    .btn-text {
+        @apply !bg-opacity-0 text-primary;
+    }
+
+    .btn-sm {
+        @apply py-1;
+    }
+
+    .btn-md {
+        @apply py-2
+    }
+
+    .btn-lg {
+        @apply py-4;
+    }
 
 }
