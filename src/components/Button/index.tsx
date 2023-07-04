@@ -8,44 +8,33 @@ interface ButtonProps {
     disabledShadow?: boolean;
 }
 
-export const Button = ({ variant = "primary", size = "md", outline = false, disabledShadow = false,  children }: ButtonProps) => {
-    let variantClassName = `bg-primary !text-white`;
+const variants = {
+    "primary": "btn-primary",
+    "secondary": "btn-secondary",
+    "danger": "btn-danger",
+    "text": "btn-text"
+}
+
+const sizes = {
+    "sm": "btn-sm",
+    "md": "btn-md",
+    "lg": "btn-lg"
+}
+
+export const Button = ({ variant, size = "md", outline = false, disabledShadow = false,  children }: ButtonProps) => {
+    const variantClassName = variant ? `${variants[variant]}` : "";
     const shadowClassName = disabledShadow ? `!drop-shadow-none` : `drop-shadow-md`;
-    
-    if(variant === "primary"){
-        variantClassName = `bg-neutral`;
-    }
 
-    if(variant === "secondary"){
-        variantClassName = `bg-secondary`;
-    }
+    const sizeClassName = `${sizes[size]}`;
 
-    if(variant === "text"){
-        variantClassName = `btn-text`;
-    }
+    const outlineClassName = outline ? "btn-outline" : "";
 
-    let sizeClassName = `py-4`;
-
-    if(size === "sm") {
-        sizeClassName = `btn-sm`;
-    }
-
-    if(size === "md") {
-        sizeClassName = `btn-md`;
-    }
-
-    if(size === "lg"){
-        sizeClassName = `btn-lg`;
-    }
-
-    const outlineClassName = outline ? "!bg-transparent" : "";
-
-    const baseClassName = `btn ${outline && "btn-outline"}`;
-    const buttonClassName = `${sizeClassName} ${variantClassName} ${outlineClassName} ${shadowClassName} ${baseClassName}`;
+    const baseClassName = `btn`;
+    const buttonClassName = `${shadowClassName} ${baseClassName} ${variantClassName} ${sizeClassName} ${outlineClassName}`;
 
     return (
-        <div className={buttonClassName}>
+        <button className={buttonClassName}>
             {children}
-        </div>
+        </button>
     )
 }

@@ -16,7 +16,7 @@ function App() {
             </div>
             <div className={columnClassName}>
               <p>{`&:hover, &:focus`}</p>
-              <Button>Default</Button>
+              <button className="btn btn-hover">Default</button>
             </div>
           </div>
           <div className={rowClassName}>
@@ -26,7 +26,7 @@ function App() {
             </div>
             <div className={columnClassName}>
               <p>{`&:hover, &:focus`}</p>
-              <Button>Default</Button>
+              <button className="btn btn-outline btn-outline-hover">Default</button>
             </div>
           </div>
           <div className={rowClassName}>
@@ -42,7 +42,7 @@ function App() {
           <div className={rowClassName}>
             <div className={columnClassName}>
               <p>{`<Button disabledShadow />`}</p>
-              <Button variant="primary">Default</Button>
+              <Button variant="primary" disabledShadow>Default</Button>
             </div>
             <div className={columnClassName}>
               <p>{`&:hover, &:focus`}</p>
@@ -51,7 +51,7 @@ function App() {
           </div>
           <div className={rowClassName}>
             <div className={columnClassName}>
-              <p>{`<Button disabledShadow />`}</p>
+              <p>{`<Button variant="primary"/>`}</p>
               <Button variant="primary">Default</Button>
             </div>
             <div className={columnClassName}>
