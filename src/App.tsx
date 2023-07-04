@@ -2,12 +2,12 @@ import { Button } from "./components/Button"
 import { Layout } from "./components/Layout"
 
 function App() {
-  const rowClassName = "flex gap-4"
-  const columnClassName = "flex flex-col gap-4 w-72";
+  const rowClassName = "flex items-center overflow-x-auto gap-4"
+  const columnClassName = "flex flex-col items-center justify-center md:items-start gap-4 w-40 md:w-72";
   return (
     <Layout>
-      <div className="min-h-[90vh]">
-        <h4 className="text-2xl mb-8">Buttons</h4>
+      <div className="min-h-[90vh] px-4 pt-8 pb-4 md:py-4">
+        <h4 className="text-2xl mb-8 text-center md:text-start">Buttons</h4>
         <div className="flex flex-wrap gap-8">
           <div className={rowClassName}>
             <div className={columnClassName}>
