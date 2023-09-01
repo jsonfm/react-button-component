@@ -1,4 +1,5 @@
 import { ReactNode, useState } from "react"
+import { SideBarLink } from "../SideBarLink";
 
 interface SideBarProps {
     children: ReactNode
@@ -15,12 +16,12 @@ export const SideBar = ({ children }: SideBarProps) => {
                 <b className="text-warning">Dev</b>challenges.io
             </p>
             <div className="flex flex-col items-center md:items-start gap-8 mt-8 md:mt-12 ">
-                <p>Colors</p>
-                <p>Typography</p>
-                <p>Spaces</p>
-                <p>Buttons</p>
-                <p>Inputs</p>
-                <p>Grid</p>
+                <SideBarLink Icon={"Icon"}>Colors</SideBarLink>
+                <SideBarLink>Typo</SideBarLink>
+                <SideBarLink>Style</SideBarLink>
+                <SideBarLink>Sizes</SideBarLink>
+                <SideBarLink>Etc</SideBarLink>
+                <SideBarLink>Cool</SideBarLink>
             </div>
         </div>
         <div className="h-screen w-full md:p-12">

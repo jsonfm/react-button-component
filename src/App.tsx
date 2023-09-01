@@ -64,7 +64,7 @@ function App() {
             </div>
             <div className={columnClassName}>
               <p>{`&:hover, &:focus`}</p>
-              <Button>Default</Button>
+              <Button variant="primary" loading={true}>Default</Button>
             </div>
           </div>
         </div>
